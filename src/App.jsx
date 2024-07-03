@@ -4,6 +4,8 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import login from '../public/images/login.json'
 import Lottie from 'lottie-react';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -45,6 +47,19 @@ function App() {
     else if(!pass){
       setPassError('Please enter your password')
     }
+    else{
+      toast.success('Login successful', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+    }
   
   }
 
@@ -54,6 +69,7 @@ function App() {
 
   return (
     <>
+    <ToastContainer />
     <div className='flex flex-col items-center justify-center h-screen'>
       <div className='flex flex-col items-center justify-center bg-[#91DDCF] w-[500px] h-[900px] rounded-3xl relative'>
         
